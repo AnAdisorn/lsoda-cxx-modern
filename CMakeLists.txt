@@ -32,8 +32,14 @@ add_executable(test_ddot test/test_ddot.cpp)
 add_test(NAME test_ddot
          COMMAND test_ddot)
 
+# test dscal
+add_executable(test_dscal test/test_dscal.cpp)
+add_test(NAME test_dscal
+         COMMAND test_dscal)
+
 find_package(OpenMP)
 if(OpenMP_CXX_FOUND)
     target_link_libraries(test_daxpy PUBLIC OpenMP::OpenMP_CXX)
     target_link_libraries(test_ddot PUBLIC OpenMP::OpenMP_CXX)
+    target_link_libraries(test_dscal PUBLIC OpenMP::OpenMP_CXX)
 endif()

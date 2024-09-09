@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test_daxpy"
+			"path" : "test_dscal"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 26,
+				"line" : 36,
 				"parent" : 0
 			},
 			{
@@ -39,7 +39,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 37,
+				"line" : 44,
 				"parent" : 0
 			},
 			{
@@ -109,7 +109,7 @@
 			]
 		}
 	],
-	"id" : "test_daxpy::@6890427a1f51a3e7e1df",
+	"id" : "test_dscal::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -129,8 +129,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "test_daxpy",
-	"nameOnDisk" : "test_daxpy",
+	"name" : "test_dscal",
+	"nameOnDisk" : "test_dscal",
 	"paths" : 
 	{
 		"build" : ".",
@@ -151,7 +151,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test/test_daxpy.cpp",
+			"path" : "test/test_dscal.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

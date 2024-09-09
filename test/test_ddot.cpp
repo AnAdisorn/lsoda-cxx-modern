@@ -2,7 +2,6 @@
 #include <cassert>
 
 // Compute inner product dot(x, y)
-// x, y: vector
 static double _ddot(const std::vector<double> &x, const std::vector<double> &y)
 {
     const size_t n = x.size();
@@ -10,9 +9,8 @@ static double _ddot(const std::vector<double> &x, const std::vector<double> &y)
 
 #pragma omp simd reduction(+ : dotprod)
     for (size_t i = 0; i < n; i++)
-    {
         dotprod += x[i] * y[i];
-    }
+
     return dotprod;
 }
 

@@ -15,7 +15,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -31,7 +32,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -40,15 +42,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "test_daxpy::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_daxpy-Debug-6df2b8e7a76fe013280d.json",
+					"jsonFile" : "target-test_daxpy-Debug-64bdd1bfb6e700226d82.json",
 					"name" : "test_daxpy",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test_ddot::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_ddot-Debug-5b1be45ddebf31b2d9ea.json",
+					"jsonFile" : "target-test_ddot-Debug-e93bd70bcdf32569af3f.json",
 					"name" : "test_ddot",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_dscal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_dscal-Debug-4aae582f559a9fa34660.json",
+					"name" : "test_dscal",
 					"projectIndex" : 0
 				}
 			]

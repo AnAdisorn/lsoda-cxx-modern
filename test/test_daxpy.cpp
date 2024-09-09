@@ -1,17 +1,13 @@
 #include <vector>
 #include <cassert>
 
-// Compute y = a*x + y
-// a: scalar
-// x, y: vector
+// Compute y[i] = a*x[i] + y[i]
 static void _daxpy(const double a, const std::vector<double> &x, std::vector<double> &y)
 {
     const size_t n = x.size();
 #pragma omp simd
     for (size_t i = 0; i < n; i++)
-    {
         y[i] = a * x[i] + y[i];
-    }
 }
 
 int main()

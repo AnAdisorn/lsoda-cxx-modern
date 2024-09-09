@@ -70,6 +70,39 @@ build CMakeFiles/test.util: CUSTOM_COMMAND
 build test: phony CMakeFiles/test.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target test_dscal
+
+
+#############################################
+# Order-only phony target for test_dscal
+
+build cmake_object_order_depends_target_test_dscal: phony || CMakeFiles/test_dscal.dir
+
+build CMakeFiles/test_dscal.dir/test/test_dscal.cpp.o: CXX_COMPILER__test_dscal_Debug ../test/test_dscal.cpp || cmake_object_order_depends_target_test_dscal
+  DEP_FILE = CMakeFiles/test_dscal.dir/test/test_dscal.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++11
+  INCLUDES = -I../include -isystem /usr/local
+  OBJECT_DIR = CMakeFiles/test_dscal.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_dscal.dir/test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_dscal
+
+
+#############################################
+# Link the executable test_dscal
+
+build test_dscal: CXX_EXECUTABLE_LINKER__test_dscal_Debug CMakeFiles/test_dscal.dir/test/test_dscal.cpp.o | /usr/local/lib/libomp.dylib
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
+  LINK_LIBRARIES = /usr/local/lib/libomp.dylib
+  OBJECT_DIR = CMakeFiles/test_dscal.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test_dscal
+  TARGET_PDB = test_dscal.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target test_ddot
 
 
@@ -146,7 +179,7 @@ build test_daxpy: CXX_EXECUTABLE_LINKER__test_daxpy_Debug CMakeFiles/test_daxpy.
 #############################################
 # Folder: /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build
 
-build all: phony test_ddot test_daxpy
+build all: phony test_dscal test_ddot test_daxpy
 
 # =============================================================================
 # Built-in targets
