@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240909-1653-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.20.5"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="macOS"
+	Hostname="MB 22-54"
+	OSRelease="14.6.1"
+	OSVersion="23G93"
+	OSPlatform="arm64"
+	Is64Bits="1"
+	VendorString="IBM"
+	VendorID="IBM"
+	FamilyID="16777228"
+	ModelID="2"
+	ProcessorCacheSize="131072"
+	NumberOfLogicalCPU="10"
+	NumberOfPhysicalCPU="10"
+	TotalVirtualMemory="1024"
+	TotalPhysicalMemory="16384"
+	LogicalProcessorsPerPhysical="10"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>Sep 09 19:18 CEST</StartDateTime>
+		<StartTestTime>1725902318</StartTestTime>
+		<TestList>
+			<Test>./test_ddot</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>test_ddot</Name>
+			<Path>.</Path>
+			<FullName>./test_ddot</FullName>
+			<FullCommandLine>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_ddot</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00270567</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_ddot</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Sep 09 19:18 CEST</EndDateTime>
+		<EndTestTime>1725902318</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

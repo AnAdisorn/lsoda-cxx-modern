@@ -1,0 +1,18 @@
+Start testing: Sep 09 19:18 CEST
+----------------------------------------------------------
+2/2 Testing: test_ddot
+2/2 Test: test_ddot
+Command: "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_ddot"
+Directory: /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build
+"test_ddot" start time: Sep 09 19:18 CEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_ddot" end time: Sep 09 19:18 CEST
+"test_ddot" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 09 19:18 CEST
