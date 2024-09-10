@@ -24,8 +24,8 @@
 	ProcessorClockFrequency="0"
 	>
 	<Testing>
-		<StartDateTime>Sep 10 16:34 CEST</StartDateTime>
-		<StartTestTime>1725978881</StartTestTime>
+		<StartDateTime>Sep 10 17:15 CEST</StartDateTime>
+		<StartTestTime>1725981330</StartTestTime>
 		<TestList>
 			<Test>./test_idamax</Test>
 		</TestList>
@@ -36,7 +36,7 @@
 			<FullCommandLine>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_idamax</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.13896</Value>
+					<Value>0.140368</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -55,8 +55,8 @@
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Sep 10 16:34 CEST</EndDateTime>
-		<EndTestTime>1725978881</EndTestTime>
+		<EndDateTime>Sep 10 17:15 CEST</EndDateTime>
+		<EndTestTime>1725981330</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

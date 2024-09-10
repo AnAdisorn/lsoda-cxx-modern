@@ -16,17 +16,17 @@ public:
         const size_t n = x.size();
 #pragma omp simd
         for (size_t i = i_begin; i < n; i++)
-            y[i] = a * x[i] + y[i];
+            y[i] += a * x[i];
     }
 
     // Compute inner product x·y
-    static double _ddot(const std::vector<double> &x, const std::vector<double> &y)
+    static double _ddot(const std::vector<double> &x, const std::vector<double> &y, const size_t i_begin = 0)
     {
         const size_t n = x.size();
         double dotprod = 0;
 
 #pragma omp simd reduction(+ : dotprod)
-        for (size_t i = 0; i < n; i++)
+        for (size_t i = i_begin; i < n; i++)
             dotprod += x[i] * y[i];
 
         return dotprod;
@@ -54,9 +54,14 @@ public:
     }
 
     // Purpose : dgefa factors a double matrix by Gaussian elimination.
-    // a:       matrix -> modify to a lower triangular matrix and the multipliers which were used to obtain it.
-    // ipvt:    vector of pivor indices
+    //
+    // Input:
+    // a:       matrix
+    // ipvt:    vector of pivot indices
     // info:    = 0 normal value, or k if U[k][k] == 0
+    //
+    // Return:
+    // a        -> modified to a lower triangular matrix and the multipliers which were used to obtain it.
     static void _dgefa(std::vector<std::vector<double>> &a, std::vector<size_t> &ipvt, int &info)
     {
         const size_t n = a.size();
@@ -99,6 +104,57 @@ public:
         ipvt[n - 1] = n - 1;
         if (a[n - 1][n - 1] == 0.)
             info = n;
+    }
+    // Purpose : dgesl solves the linear system
+    // a * x = b or Transpose(a) * x = b
+    // using the factors computed by dgeco or degfa.
+    //
+    // Input:
+    // a:           matrix
+    // ipvt:        vector of pivot indices
+    // b:           the right hand side vector
+    // transpose:   boolean to transpose matrix a
+    //
+    // Return:
+    // b            -> modified to the solution vector x
+    static void dgesl(std::vector<std::vector<double>> &a, std::vector<size_t> &ipvt, std::vector<double> &b, bool transpose = false)
+    {
+        const size_t n = a.size();
+        size_t k, j;
+
+        if (transpose)
+        {
+            //  First solve Transpose(U) * y = b.
+            for (k = 0; k < n - 1; k++)
+            {
+                j = ipvt[k];
+                if (j != k)
+                    std::swap(b[j], b[k]);
+                _daxpy(b[k], a[k], b, k);
+            }
+
+            // Now solve Transpose(L) * x = y.
+            for (k = n - 1; k >= 0; k--)
+            {
+                b[k] /= a[k][k];
+                _daxpy(-b[k], a[k], b);
+            }
+            return;
+        }
+
+        // Transpose
+        // First solve L * y = b.
+        for (k = 0; k < n; k++)
+            b[k] = (b[k] - _ddot(a[k], b)) / a[k][k];
+
+        //  Now solve U * x = y.
+        for (k = n - 2; k >= 0; k--)
+        {
+            b[k] += _ddot(a[k], b, k);
+            j = ipvt[k];
+            if (j != k)
+                std::swap(b[j], b[k]);
+        }
     }
 };
 

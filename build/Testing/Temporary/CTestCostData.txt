@@ -1,5 +1,5 @@
-test_daxpy 68 0.0717788
-test_ddot 66 0.0502599
-test_dscal 59 0.0539569
-test_idamax 47 0.0986729
+test_daxpy 70 0.0768224
+test_ddot 68 0.0528293
+test_dscal 61 0.0567617
+test_idamax 49 0.100404
 ---
