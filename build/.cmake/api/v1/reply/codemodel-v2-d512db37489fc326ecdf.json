@@ -16,7 +16,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -33,7 +34,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -42,22 +44,29 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "test_daxpy::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_daxpy-Debug-64bdd1bfb6e700226d82.json",
+					"jsonFile" : "target-test_daxpy-Debug-605c2198e919c17f5170.json",
 					"name" : "test_daxpy",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test_ddot::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_ddot-Debug-e93bd70bcdf32569af3f.json",
+					"jsonFile" : "target-test_ddot-Debug-f99afaf4d1fe2f315f25.json",
 					"name" : "test_ddot",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test_dscal::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_dscal-Debug-4aae582f559a9fa34660.json",
+					"jsonFile" : "target-test_dscal-Debug-e24ae338e324ee17d702.json",
 					"name" : "test_dscal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_idamax::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_idamax-Debug-45fea333b6d63a091bfa.json",
+					"name" : "test_idamax",
 					"projectIndex" : 0
 				}
 			]

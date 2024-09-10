@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test_ddot"
+			"path" : "test_idamax"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 31,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
@@ -39,7 +39,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 43,
+				"line" : 46,
 				"parent" : 0
 			},
 			{
@@ -79,7 +79,7 @@
 					"fragment" : "-fopenmp"
 				},
 				{
-					"fragment" : "-std=gnu++11"
+					"fragment" : "-std=gnu++17"
 				}
 			],
 			"includes" : 
@@ -101,7 +101,7 @@
 				[
 					1
 				],
-				"standard" : "11"
+				"standard" : "17"
 			},
 			"sourceIndexes" : 
 			[
@@ -109,7 +109,7 @@
 			]
 		}
 	],
-	"id" : "test_ddot::@6890427a1f51a3e7e1df",
+	"id" : "test_idamax::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -129,8 +129,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "test_ddot",
-	"nameOnDisk" : "test_ddot",
+	"name" : "test_idamax",
+	"nameOnDisk" : "test_idamax",
 	"paths" : 
 	{
 		"build" : ".",
@@ -151,7 +151,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test/test_ddot.cpp",
+			"path" : "test/test_idamax.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

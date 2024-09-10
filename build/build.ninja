@@ -70,6 +70,39 @@ build CMakeFiles/test.util: CUSTOM_COMMAND
 build test: phony CMakeFiles/test.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target test_idamax
+
+
+#############################################
+# Order-only phony target for test_idamax
+
+build cmake_object_order_depends_target_test_idamax: phony || CMakeFiles/test_idamax.dir
+
+build CMakeFiles/test_idamax.dir/test/test_idamax.cpp.o: CXX_COMPILER__test_idamax_Debug ../test/test_idamax.cpp || cmake_object_order_depends_target_test_idamax
+  DEP_FILE = CMakeFiles/test_idamax.dir/test/test_idamax.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
+  INCLUDES = -I../include -isystem /usr/local
+  OBJECT_DIR = CMakeFiles/test_idamax.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_idamax.dir/test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_idamax
+
+
+#############################################
+# Link the executable test_idamax
+
+build test_idamax: CXX_EXECUTABLE_LINKER__test_idamax_Debug CMakeFiles/test_idamax.dir/test/test_idamax.cpp.o | /usr/local/lib/libomp.dylib
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
+  LINK_LIBRARIES = /usr/local/lib/libomp.dylib
+  OBJECT_DIR = CMakeFiles/test_idamax.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test_idamax
+  TARGET_PDB = test_idamax.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target test_dscal
 
 
@@ -80,7 +113,7 @@ build cmake_object_order_depends_target_test_dscal: phony || CMakeFiles/test_dsc
 
 build CMakeFiles/test_dscal.dir/test/test_dscal.cpp.o: CXX_COMPILER__test_dscal_Debug ../test/test_dscal.cpp || cmake_object_order_depends_target_test_dscal
   DEP_FILE = CMakeFiles/test_dscal.dir/test/test_dscal.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++11
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local
   OBJECT_DIR = CMakeFiles/test_dscal.dir
   OBJECT_FILE_DIR = CMakeFiles/test_dscal.dir/test
@@ -113,7 +146,7 @@ build cmake_object_order_depends_target_test_ddot: phony || CMakeFiles/test_ddot
 
 build CMakeFiles/test_ddot.dir/test/test_ddot.cpp.o: CXX_COMPILER__test_ddot_Debug ../test/test_ddot.cpp || cmake_object_order_depends_target_test_ddot
   DEP_FILE = CMakeFiles/test_ddot.dir/test/test_ddot.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++11
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local
   OBJECT_DIR = CMakeFiles/test_ddot.dir
   OBJECT_FILE_DIR = CMakeFiles/test_ddot.dir/test
@@ -146,7 +179,7 @@ build cmake_object_order_depends_target_test_daxpy: phony || CMakeFiles/test_dax
 
 build CMakeFiles/test_daxpy.dir/test/test_daxpy.cpp.o: CXX_COMPILER__test_daxpy_Debug ../test/test_daxpy.cpp || cmake_object_order_depends_target_test_daxpy
   DEP_FILE = CMakeFiles/test_daxpy.dir/test/test_daxpy.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++11
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local
   OBJECT_DIR = CMakeFiles/test_daxpy.dir
   OBJECT_FILE_DIR = CMakeFiles/test_daxpy.dir/test
@@ -179,7 +212,7 @@ build test_daxpy: CXX_EXECUTABLE_LINKER__test_daxpy_Debug CMakeFiles/test_daxpy.
 #############################################
 # Folder: /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build
 
-build all: phony test_dscal test_ddot test_daxpy
+build all: phony test_idamax test_dscal test_ddot test_daxpy
 
 # =============================================================================
 # Built-in targets

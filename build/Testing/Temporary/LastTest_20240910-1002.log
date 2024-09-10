@@ -1,0 +1,18 @@
+Start testing: Sep 10 16:34 CEST
+----------------------------------------------------------
+4/4 Testing: test_idamax
+4/4 Test: test_idamax
+Command: "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_idamax"
+Directory: /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build
+"test_idamax" start time: Sep 10 16:34 CEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"test_idamax" end time: Sep 10 16:34 CEST
+"test_idamax" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 10 16:34 CEST
