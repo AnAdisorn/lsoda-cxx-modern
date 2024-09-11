@@ -1,6 +1,5 @@
 #include "lsoda.hpp"
 #include <vector>
-
 #include <cassert>
 
 int main()
@@ -16,5 +15,6 @@ int main()
     assert(result2.first == 2);
     assert(result1.second == 7);
     assert(result2.second == -5);
+
     return 0;
 }

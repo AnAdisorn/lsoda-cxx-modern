@@ -1,6 +1,11 @@
 [
 {
   "directory": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build",
+  "command": "/usr/bin/clang++ -I../include -isystem /usr/local -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17 -o CMakeFiles/test_dgefa.dir/test/test_dgefa.cpp.o -c /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_dgefa.cpp",
+  "file": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_dgefa.cpp"
+},
+{
+  "directory": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build",
   "command": "/usr/bin/clang++ -I../include -isystem /usr/local -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17 -o CMakeFiles/test_idamax.dir/test/test_idamax.cpp.o -c /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_idamax.cpp",
   "file": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_idamax.cpp"
 },

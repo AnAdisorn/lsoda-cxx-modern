@@ -70,6 +70,39 @@ build CMakeFiles/test.util: CUSTOM_COMMAND
 build test: phony CMakeFiles/test.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target test_dgefa
+
+
+#############################################
+# Order-only phony target for test_dgefa
+
+build cmake_object_order_depends_target_test_dgefa: phony || CMakeFiles/test_dgefa.dir
+
+build CMakeFiles/test_dgefa.dir/test/test_dgefa.cpp.o: CXX_COMPILER__test_dgefa_Debug ../test/test_dgefa.cpp || cmake_object_order_depends_target_test_dgefa
+  DEP_FILE = CMakeFiles/test_dgefa.dir/test/test_dgefa.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
+  INCLUDES = -I../include -isystem /usr/local
+  OBJECT_DIR = CMakeFiles/test_dgefa.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_dgefa.dir/test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_dgefa
+
+
+#############################################
+# Link the executable test_dgefa
+
+build test_dgefa: CXX_EXECUTABLE_LINKER__test_dgefa_Debug CMakeFiles/test_dgefa.dir/test/test_dgefa.cpp.o | /usr/local/lib/libomp.dylib
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
+  LINK_LIBRARIES = /usr/local/lib/libomp.dylib
+  OBJECT_DIR = CMakeFiles/test_dgefa.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test_dgefa
+  TARGET_PDB = test_dgefa.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target test_idamax
 
 
@@ -212,7 +245,7 @@ build test_daxpy: CXX_EXECUTABLE_LINKER__test_daxpy_Debug CMakeFiles/test_daxpy.
 #############################################
 # Folder: /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build
 
-build all: phony test_idamax test_dscal test_ddot test_daxpy
+build all: phony test_dgefa test_idamax test_dscal test_ddot test_daxpy
 
 # =============================================================================
 # Built-in targets

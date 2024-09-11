@@ -38,10 +38,15 @@ add_executable(test_idamax test/test_idamax.cpp)
 add_test(NAME test_idamax
     COMMAND test_idamax)
 
+add_executable(test_dgefa test/test_dgefa.cpp)
+add_test(NAME test_dgefa
+    COMMAND test_dgefa)
+
 find_package(OpenMP)
 if(OpenMP_CXX_FOUND)
     target_link_libraries(test_daxpy PUBLIC OpenMP::OpenMP_CXX)
     target_link_libraries(test_ddot PUBLIC OpenMP::OpenMP_CXX)
     target_link_libraries(test_dscal PUBLIC OpenMP::OpenMP_CXX)
     target_link_libraries(test_idamax PUBLIC OpenMP::OpenMP_CXX)
+    target_link_libraries(test_dgefa PUBLIC OpenMP::OpenMP_CXX)
 endif()
