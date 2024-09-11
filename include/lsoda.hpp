@@ -1,6 +1,7 @@
 #ifndef LSODA_HH
 #define LSODA_HH
 
+#include "Eigen/Dense"
 #include <vector>
 #include <iterator>
 #include <algorithm>
