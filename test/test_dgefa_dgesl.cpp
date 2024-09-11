@@ -22,13 +22,13 @@ int main()
     double tol = 0.001;
 
     std::vector<std::vector<double>> a = {{1, 2, 3},
-                                          {5, 7, 11},
+                                          {11, 7, 5},
                                           {13, 17, 19}},
                                      a_dgefa = {{3, -0.666667, -0.333333},
-                                                {11, 1.33333, 0.25},
-                                                {19, 6.66667, 6}};
+                                                {5, 9.33333, -0.392857},
+                                                {19, 6.66667, 1.71429}};
     std::vector<double> b = {23, 29, 37},
-                        b_dgesl = {-3, 2.16667, 1.16667};
+                        b_dgesl = {10, 1.08333 ,0.0833333};
     std::vector<size_t> ipvt(3), ipvt_dgefa = {2, 2, 2};
     size_t info, info_dgefa = 0;
 
@@ -40,7 +40,7 @@ int main()
               << "info = " << info << "\n"
               << "\n";
 
-    std::cout << "[dgefa] starting assertion\n";
+    std::cout << "[dgefa] start asserting\n";
 
     // Assert the values in the matrix and ipvt using a for loop
     for (size_t i = 0; i < a.size(); i++)

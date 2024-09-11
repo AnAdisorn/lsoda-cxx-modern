@@ -67,7 +67,6 @@ public:
     {
         const size_t n = a.size();
         size_t k, i;
-        bool col_swap;
 
         // Gaussian elimination with partial pivoting.
         info = 0;
@@ -75,9 +74,8 @@ public:
         {
             // Find j = pivot index.
             // Note: using begin_index = k to start searching at diagonal value
-            auto [j, j_val] = _idamax(a[k], k + 1);
+            auto [j, j_val] = _idamax(a[k], k);
             ipvt[k] = j;
-            col_swap = (j != k);
 
             // Zero pivot (max element) implies this row already triangularized
             if (j_val == 0.)
@@ -87,12 +85,12 @@ public:
             }
 
             // Interchange column if necessary
-            if (col_swap)
+            if (j != k)
                 for (i = k; i < n; i++)
                     std::swap(a[i][j], a[i][k]);
 
             // Compute multipliers
-            _dscal(-1. / a[k][k], a[k], k + 1, n - k + 1);
+            _dscal(-1. / a[k][k], a[k], k + 1, n);
 
             // Column (k) elimination with row indexing.
             // a[i][k] += a[i][k]*a[k][k] = 0, as a[k][k] = -1
@@ -132,7 +130,7 @@ public:
                 j = ipvt[k];
                 if (j != k)
                     std::swap(b[j], b[k]);
-                _daxpy(b[k], a[k], b, k + 1, n - k + 1);
+                _daxpy(b[k], a[k], b, k + 1, n);
             }
 
             // Now solve Transpose(L) * x = y.
@@ -152,7 +150,7 @@ public:
         //  Now solve U * x = y.
         for (k = n - 1; k-- > 0;) // k = n - 2, n - 3, ... , 0
         {
-            b[k] += _ddot(a[k], b, k + 1, n - k + 1);
+            b[k] += _ddot(a[k], b, k + 1, n);
             j = ipvt[k];
             if (j != k)
                 std::swap(b[j], b[k]);
