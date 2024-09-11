@@ -1,25 +1,3 @@
-Start testing: Sep 11 02:31 CEST
+Start testing: Sep 11 13:15 CEST
 ----------------------------------------------------------
-5/5 Testing: test_dgefa
-5/5 Test: test_dgefa
-Command: "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_dgefa"
-Directory: /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build
-"test_dgefa" start time: Sep 11 02:31 CEST
-Output:
-----------------------------------------------------------
-3 -0.666667 -0.333333 
-11 1.33333 0.25 
-19 6.66667 6 
-ipvt = 2 2 2
-info = 0
-
-b = -3 2.16667 1.16667
-<end of output>
-Test time =   0.21 sec
-----------------------------------------------------------
-Test Passed.
-"test_dgefa" end time: Sep 11 02:31 CEST
-"test_dgefa" time elapsed: 00:00:00
-----------------------------------------------------------
-
-End testing: Sep 11 02:31 CEST
+End testing: Sep 11 13:15 CEST

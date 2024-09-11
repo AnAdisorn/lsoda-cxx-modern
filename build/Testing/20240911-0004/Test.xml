@@ -18,52 +18,17 @@
 	ProcessorCacheSize="131072"
 	NumberOfLogicalCPU="10"
 	NumberOfPhysicalCPU="10"
-	TotalVirtualMemory="1024"
+	TotalVirtualMemory="2048"
 	TotalPhysicalMemory="16384"
 	LogicalProcessorsPerPhysical="10"
 	ProcessorClockFrequency="0"
 	>
 	<Testing>
-		<StartDateTime>Sep 11 02:31 CEST</StartDateTime>
-		<StartTestTime>1726014680</StartTestTime>
-		<TestList>
-			<Test>./test_dgefa</Test>
-		</TestList>
-		<Test Status="passed">
-			<Name>test_dgefa</Name>
-			<Path>.</Path>
-			<FullName>./test_dgefa</FullName>
-			<FullCommandLine>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_dgefa</FullCommandLine>
-			<Results>
-				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.205646</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="numeric/double" name="Processors">
-					<Value>1</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Completion Status">
-					<Value>Completed</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_dgefa</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Environment">
-					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
-				</NamedMeasurement>
-				<Measurement>
-					<Value>3 -0.666667 -0.333333 
-11 1.33333 0.25 
-19 6.66667 6 
-ipvt = 2 2 2
-info = 0
-
-b = -3 2.16667 1.16667
-</Value>
-				</Measurement>
-			</Results>
-		</Test>
-		<EndDateTime>Sep 11 02:31 CEST</EndDateTime>
-		<EndTestTime>1726014680</EndTestTime>
+		<StartDateTime>Sep 11 13:15 CEST</StartDateTime>
+		<StartTestTime>1726053328</StartTestTime>
+		<TestList/>
+		<EndDateTime>Sep 11 13:15 CEST</EndDateTime>
+		<EndTestTime>1726053328</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

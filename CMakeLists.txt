@@ -8,7 +8,7 @@ project(lsoda-cxx-modern VERSION 0.0.1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_compile_options(-Wall -Wextra -O3)
+add_compile_options(-Wall -Wextra -O3 -march=native)
 
 ############################################################
 # Create a library

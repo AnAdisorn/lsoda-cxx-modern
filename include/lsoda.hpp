@@ -14,32 +14,32 @@ class LSODA
 {
 public:
     // Compute y[i] += a*x[i]
-    /// inputs: a, x, y, begin_index
-    static void _daxpy(const size_t n, const double a, const std::vector<double> &x, std::vector<double> &y, const size_t i_begin = 0)
+    /// inputs: a, x, y, begin_index, end_index
+    static void _daxpy(const double a, const std::vector<double> &x, std::vector<double> &y, const size_t i_begin, const size_t i_end)
     {
 #pragma omp parallel for
-        for (size_t i = i_begin; i < n; i++)
+        for (size_t i = i_begin; i < i_end; i++)
             y[i] += a * x[i];
     }
 
     // Compute inner product x·y
-    static double _ddot(const size_t n, const std::vector<double> &x, const std::vector<double> &y, const size_t i_begin = 0)
+    static double _ddot(const std::vector<double> &x, const std::vector<double> &y, const size_t i_begin, const size_t i_end)
     {
         double dotprod = 0;
 
 #pragma omp simd reduction(+ : dotprod)
-        for (size_t i = i_begin; i < n; i++)
+        for (size_t i = i_begin; i < i_end; i++)
             dotprod += x[i] * y[i];
 
         return dotprod;
     }
 
     // Compute x[i] *= a
-    // inputs: a, x, i_begin
-    static void _dscal(const size_t n, const double a, std::vector<double> &x, const size_t i_begin = 0)
+    // inputs: a, x, begin_index, end_index
+    static void _dscal(const double a, std::vector<double> &x, const size_t i_begin, const size_t i_end)
     {
 #pragma omp simd
-        for (size_t i = i_begin; i < n; i++)
+        for (size_t i = i_begin; i < i_end; i++)
             x[i] *= a;
     }
 
@@ -92,14 +92,14 @@ public:
                     std::swap(a[i][j], a[i][k]);
 
             // Compute multipliers
-            _dscal(n - k + 1, -1. / a[k][k], a[k], k + 1);
+            _dscal(-1. / a[k][k], a[k], k + 1, n - k + 1);
 
             // Column (k) elimination with row indexing.
             // a[i][k] += a[i][k]*a[k][k] = 0, as a[k][k] = -1
 #pragma omp parallel for
             for (i = k + 1; i < n; i++)
             {
-                _daxpy(n, a[i][k], a[k], a[i], k + 1);
+                _daxpy(a[i][k], a[k], a[i], k + 1, n);
             }
         } // end k-loop
         ipvt[n - 1] = n - 1;
@@ -132,14 +132,14 @@ public:
                 j = ipvt[k];
                 if (j != k)
                     std::swap(b[j], b[k]);
-                _daxpy(n - k + 1, b[k], a[k], b, k + 1);
+                _daxpy(b[k], a[k], b, k + 1, n - k + 1);
             }
 
             // Now solve Transpose(L) * x = y.
-            for (k = n; k-- > 0;)
+            for (k = n; k-- > 0;)  // k = n - 1, n - 2, ... , 0
             {
                 b[k] /= a[k][k];
-                _daxpy(k, -b[k], a[k], b);
+                _daxpy(-b[k], a[k], b, 0, k);
             }
             return;
         }
@@ -147,12 +147,12 @@ public:
         // No transpose
         // First solve L * y = b.
         for (k = 0; k < n; k++)
-            b[k] = (b[k] - _ddot(k, a[k], b)) / a[k][k];
+            b[k] = (b[k] - _ddot(a[k], b, 0, k)) / a[k][k];
 
         //  Now solve U * x = y.
-        for (k = n - 1; k-- > 0;)
+        for (k = n - 1; k-- > 0;) // k = n - 2, n - 3, ... , 0
         {
-            b[k] += _ddot(n - k + 1, a[k], b, k + 1);
+            b[k] += _ddot(a[k], b, k + 1, n - k + 1);
             j = ipvt[k];
             if (j != k)
                 std::swap(b[j], b[k]);

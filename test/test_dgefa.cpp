@@ -32,12 +32,15 @@ int main()
     std::vector<size_t> ipvt(3), ipvt_dgefa = {2, 2, 2};
     size_t info, info_dgefa = 0;
 
+    // DGEFA
     lsoda._dgefa(a, ipvt, info);
     printMatrix(a);
 
     std::cout << "ipvt = " << ipvt[0] << " " << ipvt[1] << " " << ipvt[2] << "\n"
               << "info = " << info << "\n"
-              << std::endl;
+              << "\n";
+
+    std::cout << "[dgefa] starting assertion\n";
 
     // Assert the values in the matrix and ipvt using a for loop
     for (size_t i = 0; i < a.size(); i++)
@@ -49,13 +52,16 @@ int main()
         }
     }
     assert(info == info_dgefa);
+    std::cout << "[dgefa] completed\n";
 
+    // DGESL
     lsoda._dgesl(a, ipvt, b, true);
 
     std::cout << "b = " << b[0] << " " << b[1] << " " << b[2] << "\n";
 
     for (size_t i = 0; i < b.size(); i++)
         assert((b[i] - b_dgesl[i]) / b[i] < tol);
+    std::cout << "[dgesl] completed\n";
 
     return 0;
 }

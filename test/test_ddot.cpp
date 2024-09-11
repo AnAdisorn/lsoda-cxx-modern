@@ -8,7 +8,7 @@ int main()
 
     std::vector<double> x{1, 2, 3}, y{4, 5, 6};
 
-    double dotprod = lsoda._ddot(x.size(),x, y);
+    double dotprod = lsoda._ddot(x, y, 0, x.size());
     assert(dotprod == 32);
     return 0;
 }

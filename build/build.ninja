@@ -80,7 +80,7 @@ build cmake_object_order_depends_target_test_dgefa: phony || CMakeFiles/test_dge
 
 build CMakeFiles/test_dgefa.dir/test/test_dgefa.cpp.o: CXX_COMPILER__test_dgefa_Debug ../test/test_dgefa.cpp || cmake_object_order_depends_target_test_dgefa
   DEP_FILE = CMakeFiles/test_dgefa.dir/test/test_dgefa.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -march=native -Xclang -fopenmp -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local
   OBJECT_DIR = CMakeFiles/test_dgefa.dir
   OBJECT_FILE_DIR = CMakeFiles/test_dgefa.dir/test
@@ -113,7 +113,7 @@ build cmake_object_order_depends_target_test_idamax: phony || CMakeFiles/test_id
 
 build CMakeFiles/test_idamax.dir/test/test_idamax.cpp.o: CXX_COMPILER__test_idamax_Debug ../test/test_idamax.cpp || cmake_object_order_depends_target_test_idamax
   DEP_FILE = CMakeFiles/test_idamax.dir/test/test_idamax.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -march=native -Xclang -fopenmp -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local
   OBJECT_DIR = CMakeFiles/test_idamax.dir
   OBJECT_FILE_DIR = CMakeFiles/test_idamax.dir/test
@@ -146,7 +146,7 @@ build cmake_object_order_depends_target_test_dscal: phony || CMakeFiles/test_dsc
 
 build CMakeFiles/test_dscal.dir/test/test_dscal.cpp.o: CXX_COMPILER__test_dscal_Debug ../test/test_dscal.cpp || cmake_object_order_depends_target_test_dscal
   DEP_FILE = CMakeFiles/test_dscal.dir/test/test_dscal.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -march=native -Xclang -fopenmp -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local
   OBJECT_DIR = CMakeFiles/test_dscal.dir
   OBJECT_FILE_DIR = CMakeFiles/test_dscal.dir/test
@@ -179,7 +179,7 @@ build cmake_object_order_depends_target_test_ddot: phony || CMakeFiles/test_ddot
 
 build CMakeFiles/test_ddot.dir/test/test_ddot.cpp.o: CXX_COMPILER__test_ddot_Debug ../test/test_ddot.cpp || cmake_object_order_depends_target_test_ddot
   DEP_FILE = CMakeFiles/test_ddot.dir/test/test_ddot.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -march=native -Xclang -fopenmp -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local
   OBJECT_DIR = CMakeFiles/test_ddot.dir
   OBJECT_FILE_DIR = CMakeFiles/test_ddot.dir/test
@@ -212,7 +212,7 @@ build cmake_object_order_depends_target_test_daxpy: phony || CMakeFiles/test_dax
 
 build CMakeFiles/test_daxpy.dir/test/test_daxpy.cpp.o: CXX_COMPILER__test_daxpy_Debug ../test/test_daxpy.cpp || cmake_object_order_depends_target_test_daxpy
   DEP_FILE = CMakeFiles/test_daxpy.dir/test/test_daxpy.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -Xclang -fopenmp -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -march=native -Xclang -fopenmp -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local
   OBJECT_DIR = CMakeFiles/test_daxpy.dir
   OBJECT_FILE_DIR = CMakeFiles/test_daxpy.dir/test
