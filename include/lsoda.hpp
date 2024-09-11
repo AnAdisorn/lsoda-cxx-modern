@@ -17,7 +17,7 @@ public:
     // inputs: a, x, y, begin_index, end_index
     static void _daxpy(const double a, const std::vector<double> &x, std::vector<double> &y, const size_t i_begin, const size_t i_end)
     {
-#pragma omp parallel for
+// #pragma omp parallel for
         for (size_t i = i_begin; i < i_end; i++)
             y[i] += a * x[i];
     }
@@ -27,7 +27,7 @@ public:
     {
         double dotprod = 0;
 
-#pragma omp simd reduction(+ : dotprod)
+// #pragma omp simd reduction(+ : dotprod)
         for (size_t i = i_begin; i < i_end; i++)
             dotprod += x[i] * y[i];
 
@@ -38,7 +38,7 @@ public:
     // inputs: a, x, begin_index, end_index
     static void _dscal(const double a, std::vector<double> &x, const size_t i_begin, const size_t i_end)
     {
-#pragma omp simd
+// #pragma omp simd
         for (size_t i = i_begin; i < i_end; i++)
             x[i] *= a;
     }
@@ -46,10 +46,11 @@ public:
     // Purpose : Find largest component of double vector x
     // inputs: x, begin_index
     // return index and iter of that index
-    static std::pair<size_t, double> _idamax(std::vector<double> &x, const size_t i_begin = 0)
+    static std::pair<size_t, double> _idamax(std::vector<double> &x, const size_t i_begin, const size_t i_end)
     {
         auto begin = x.begin() + i_begin;
-        std::vector<double>::iterator max_iter = std::max_element(begin, x.end(), [](double a, double b)
+        auto end = x.begin() + i_end;
+        std::vector<double>::iterator max_iter = std::max_element(begin, end, [](double a, double b)
                                                                   { return std::abs(a) < std::abs(b); });
         return {std::distance(begin, max_iter) + i_begin, *max_iter};
     }
@@ -74,7 +75,7 @@ public:
         {
             // Find j = pivot index.
             // Note: using begin_index = k to start searching at diagonal value
-            auto [j, j_val] = _idamax(a[k], k);
+            auto [j, j_val] = _idamax(a[k], k, n);
             ipvt[k] = j;
 
             // Zero pivot (max element) implies this row already triangularized
@@ -94,7 +95,7 @@ public:
 
             // Column (k) elimination with row indexing.
             // a[i][k] += a[i][k]*a[k][k] = 0, as a[k][k] = -1
-#pragma omp parallel for
+// #pragma omp parallel for
             for (i = k + 1; i < n; i++)
             {
                 _daxpy(a[i][k], a[k], a[i], k + 1, n);
@@ -164,7 +165,7 @@ public:
         const size_t n = v.size();
         double mnorm = 0;
 
-#pragma omp simd reduction(max : mnorm)
+// #pragma omp simd reduction(max : mnorm)
         for (size_t i = 0; i < n; i++)
             mnorm = std::max(mnorm, std::abs(v[i]) * w[i]);
 
@@ -179,16 +180,30 @@ public:
         const size_t n = w.size();
         double norm = 0;
 
-#pragma omp simd reduction(max : norm)
+// #pragma omp simd reduction(max : norm)
         for (size_t i = 0; i < n; i++)
         {
             double sum = 0;
-#pragma omp simd reduction(+ : sum)
+// #pragma omp ordered simd
             for (size_t j = 0; j < n; j++)
                 sum += std::abs(a[i][j]) / w[j];
             norm = std::max(norm, sum * w[i]);
         }
         return norm;
+    }
+
+    // prja is called by stoda to compute and process the matrix
+    // P = I - h * el[1] * J, where J is an approximation to the Jacobian.
+    // Here J is computed by finite differencing.
+    // J, scaled by -h * el[1], is stored in wm. Then the norm of J ( the
+    // matrix norm consistent with the weighted max-norm on vectors given
+    // by vmnorm ) is computed, and J is overwritten by P. P is then
+    // subjected to LU decomposition in preparation for later solution
+    // of linear systems with p as coefficient matrix. This is done
+    // by dgefa if miter = 2, and by dgbfa if miter = 5.
+    template <class System>
+    static void _prja(System &system, StateType state)
+    {
     }
 
 private:
