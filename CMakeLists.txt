@@ -38,9 +38,13 @@ add_executable(test_idamax test/test_idamax.cpp)
 add_test(NAME test_idamax
     COMMAND test_idamax)
 
-add_executable(test_dgefa test/test_dgefa.cpp)
-add_test(NAME test_dgefa
-    COMMAND test_dgefa)
+add_executable(test_dgefa_dgesl test/test_dgefa_dgesl.cpp)
+add_test(NAME test_dgefa_dgesl
+    COMMAND test_dgefa_dgesl)
+
+add_executable(test_vmnorm_fnorm test/test_vmnorm_fnorm.cpp)
+add_test(NAME test_vmnorm_fnorm
+    COMMAND test_vmnorm_fnorm)
 
 find_package(OpenMP)
 if(OpenMP_CXX_FOUND)
@@ -48,5 +52,5 @@ if(OpenMP_CXX_FOUND)
     target_link_libraries(test_ddot PUBLIC OpenMP::OpenMP_CXX)
     target_link_libraries(test_dscal PUBLIC OpenMP::OpenMP_CXX)
     target_link_libraries(test_idamax PUBLIC OpenMP::OpenMP_CXX)
-    target_link_libraries(test_dgefa PUBLIC OpenMP::OpenMP_CXX)
+    target_link_libraries(test_dgefa_dgesl PUBLIC OpenMP::OpenMP_CXX)
 endif()

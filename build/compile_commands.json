@@ -1,8 +1,13 @@
 [
 {
   "directory": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build",
-  "command": "/usr/bin/clang++ -I../include -isystem /usr/local -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -march=native -Xclang -fopenmp -std=gnu++17 -o CMakeFiles/test_dgefa.dir/test/test_dgefa.cpp.o -c /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_dgefa.cpp",
-  "file": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_dgefa.cpp"
+  "command": "/usr/bin/clang++ -I../include -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -march=native -std=gnu++17 -o CMakeFiles/test_vmnorm_fnorm.dir/test/test_vmnorm_fnorm.cpp.o -c /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_vmnorm_fnorm.cpp",
+  "file": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_vmnorm_fnorm.cpp"
+},
+{
+  "directory": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build",
+  "command": "/usr/bin/clang++ -I../include -isystem /usr/local -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wall -Wextra -O3 -march=native -Xclang -fopenmp -std=gnu++17 -o CMakeFiles/test_dgefa_dgesl.dir/test/test_dgefa_dgesl.cpp.o -c /Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_dgefa_dgesl.cpp",
+  "file": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/test/test_dgefa_dgesl.cpp"
 },
 {
   "directory": "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build",

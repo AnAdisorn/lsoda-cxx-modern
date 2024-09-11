@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site BuildName="(empty)"
-	BuildStamp="20240910-1002-Experimental"
+	BuildStamp="20240911-1438-Experimental"
 	Name="(empty)"
 	Generator="ctest-3.20.5"
 	CompilerName=""
@@ -18,25 +18,25 @@
 	ProcessorCacheSize="131072"
 	NumberOfLogicalCPU="10"
 	NumberOfPhysicalCPU="10"
-	TotalVirtualMemory="1024"
+	TotalVirtualMemory="2048"
 	TotalPhysicalMemory="16384"
 	LogicalProcessorsPerPhysical="10"
 	ProcessorClockFrequency="0"
 	>
 	<Testing>
-		<StartDateTime>Sep 11 01:36 CEST</StartDateTime>
-		<StartTestTime>1726011387</StartTestTime>
+		<StartDateTime>Sep 11 16:40 CEST</StartDateTime>
+		<StartTestTime>1726065620</StartTestTime>
 		<TestList>
-			<Test>./test_dgefa</Test>
+			<Test>./test_vmnorm_fnorm</Test>
 		</TestList>
 		<Test Status="passed">
-			<Name>test_dgefa</Name>
+			<Name>test_vmnorm_fnorm</Name>
 			<Path>.</Path>
-			<FullName>./test_dgefa</FullName>
-			<FullCommandLine>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_dgefa</FullCommandLine>
+			<FullName>./test_vmnorm_fnorm</FullName>
+			<FullCommandLine>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_vmnorm_fnorm</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.141816</Value>
+					<Value>0.158512</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -45,25 +45,19 @@
 					<Value>Completed</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_dgefa</Value>
+					<Value>/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/build/test_vmnorm_fnorm</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Environment">
 					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value>3 -0.666667 -0.333333 
-11 1.33333 0.25 
-19 6.66667 6 
-ipvt = 2 2 2
-info = 0
-
-b = 10.3333 6.91667 -6.11806
+					<Value>51.9374
 </Value>
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Sep 11 01:36 CEST</EndDateTime>
-		<EndTestTime>1726011387</EndTestTime>
+		<EndDateTime>Sep 11 16:40 CEST</EndDateTime>
+		<EndTestTime>1726065620</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test_ddot"
+			"path" : "test_vmnorm_fnorm"
 		}
 	],
 	"backtrace" : 1,
@@ -12,7 +12,6 @@
 		[
 			"add_executable",
 			"add_compile_options",
-			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
@@ -27,7 +26,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 29,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
@@ -38,12 +37,6 @@
 			},
 			{
 				"command" : 2,
-				"file" : 0,
-				"line" : 48,
-				"parent" : 0
-			},
-			{
-				"command" : 3,
 				"file" : 0,
 				"line" : 17,
 				"parent" : 0
@@ -75,27 +68,14 @@
 					"fragment" : "-march=native"
 				},
 				{
-					"backtrace" : 3,
-					"fragment" : "-Xclang"
-				},
-				{
-					"backtrace" : 3,
-					"fragment" : "-fopenmp"
-				},
-				{
 					"fragment" : "-std=gnu++17"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
-					"path" : "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/include"
-				},
-				{
 					"backtrace" : 3,
-					"isSystem" : true,
-					"path" : "/usr/local"
+					"path" : "/Users/adisorn/Desktop/Codes/Library/lsoda-cxx-modern/include"
 				}
 			],
 			"language" : "CXX",
@@ -113,7 +93,7 @@
 			]
 		}
 	],
-	"id" : "test_ddot::@6890427a1f51a3e7e1df",
+	"id" : "test_vmnorm_fnorm::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -125,16 +105,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "/usr/local/lib/libomp.dylib",
-				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "test_ddot",
-	"nameOnDisk" : "test_ddot",
+	"name" : "test_vmnorm_fnorm",
+	"nameOnDisk" : "test_vmnorm_fnorm",
 	"paths" : 
 	{
 		"build" : ".",
@@ -155,7 +131,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test/test_ddot.cpp",
+			"path" : "test/test_vmnorm_fnorm.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

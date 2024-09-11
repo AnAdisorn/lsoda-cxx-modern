@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test_dscal"
+			"path" : "test_ddot"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 33,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
@@ -39,7 +39,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 49,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
@@ -113,7 +113,7 @@
 			]
 		}
 	],
-	"id" : "test_dscal::@6890427a1f51a3e7e1df",
+	"id" : "test_ddot::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -133,8 +133,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "test_dscal",
-	"nameOnDisk" : "test_dscal",
+	"name" : "test_ddot",
+	"nameOnDisk" : "test_ddot",
 	"paths" : 
 	{
 		"build" : ".",
@@ -155,7 +155,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test/test_dscal.cpp",
+			"path" : "test/test_ddot.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

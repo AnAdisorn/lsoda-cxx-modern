@@ -1,6 +1,7 @@
-test_daxpy 102 0.0881654
-test_ddot 101 0.0622687
-test_dscal 94 0.0655946
-test_idamax 82 0.104546
-test_dgefa 23 0.132066
+test_daxpy 1 0.224497
+test_ddot 1 0.157897
+test_dscal 1 0.160996
+test_idamax 1 0.154804
+test_dgefa_dgesl 1 0.161951
+test_vmnorm_fnorm 1 0.158512
 ---

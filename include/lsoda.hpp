@@ -14,7 +14,7 @@ class LSODA
 {
 public:
     // Compute y[i] += a*x[i]
-    /// inputs: a, x, y, begin_index, end_index
+    // inputs: a, x, y, begin_index, end_index
     static void _daxpy(const double a, const std::vector<double> &x, std::vector<double> &y, const size_t i_begin, const size_t i_end)
     {
 #pragma omp parallel for
@@ -136,7 +136,7 @@ public:
             }
 
             // Now solve Transpose(L) * x = y.
-            for (k = n; k-- > 0;)  // k = n - 1, n - 2, ... , 0
+            for (k = n; k-- > 0;) // k = n - 1, n - 2, ... , 0
             {
                 b[k] /= a[k][k];
                 _daxpy(-b[k], a[k], b, 0, k);
@@ -159,7 +159,54 @@ public:
         }
     }
 
+    // Purpose: computes the weighted max-norm of the vector of length n contained in the vector v,
+    // with weights contained in the vector w of length n.
+    static double _vmnorm(const std::vector<double> &v, const std::vector<double> &w)
+    {
+        const size_t n = v.size();
+        double mnorm = 0;
+
+#pragma omp simd reduction(max : mnorm)
+        for (size_t i = 0; i < n; i++)
+            mnorm = std::max(mnorm, std::abs(v[i]) * w[i]);
+
+        return mnorm;
+    }
+
+    // This subroutine computes the norm of a full n by n matrix,
+    // stored in the matrix a, that is consistent with the weighted max - norm on vectors,
+    // with weights stored in the vector w.
+    static double _fnorm(const std::vector<std::vector<double>> &a, const std::vector<double> &w)
+    {
+        const size_t n = w.size();
+        double norm = 0;
+
+#pragma omp simd reduction(max : norm)
+        for (size_t i = 0; i < n; i++)
+        {
+            double sum = 0;
+#pragma omp simd reduction(+ : sum)
+            for (size_t j = 0; j < n; j++)
+                sum += std::abs(a[i][j]) / w[j];
+            norm = std::max(norm, sum * w[i]);
+        }
+        return norm;
+    }
+
 private:
+    // New variable, not in the original fortran code
+
+    // Variables for lsoda()
+
+    // Variables for prja()
+
+    // Variables for solsy()
+
+    // Variables for stoda()
+
+    // Variable for block data
+
+    // Variables for various vectors and the Jacobian.
 };
 
 #endif // end of include guard: LSODA_HH
