@@ -151,21 +151,10 @@ public:
     // This subroutine computes the norm of a full n by n matrix,
     // stored in the matrix a, that is consistent with the weighted max - norm on vectors,
     // with weights stored in the vector w.
+    // i.e. fnorm = max(i=1,...,n) ( w[i] * sum(j=1,...,n) fabs( a[i][j] ) / w[j] )
     static double _fnorm(const Eigen::Ref<const Eigen::MatrixXd> &a, const Eigen::Ref<const Eigen::VectorXd> &w)
     {
-        const size_t n = w.size();
-        double norm = 0;
-
-        // #pragma omp simd reduction(max : norm)
-        for (size_t i = 0; i < n; i++)
-        {
-            double sum = 0;
-            // #pragma omp ordered simd
-            for (size_t j = 0; j < n; j++)
-                sum += std::abs(a(i, j)) / w(j);
-            norm = std::max(norm, sum * w(i));
-        }
-        return norm;
+        return ((a.cwiseAbs().array().rowwise() / w.transpose().array()).rowwise().sum().array() * w.array()).maxCoeff();
     }
 
     // // prja is called by stoda to compute and process the matrix
